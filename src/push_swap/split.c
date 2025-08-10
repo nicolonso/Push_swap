@@ -6,11 +6,11 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 21:29:10 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/08/07 22:17:35 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/08/10 13:34:45 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../hdrs/push_swap.h"
+#include "../../hdr/push_swap.h"
 
 static int count_words(char *s, char c)
 {
@@ -50,9 +50,9 @@ static char *get_next_word(char *s, char c)
 		++len;
 next_word = malloc((size_t)len * sizeof(char) + 1);
 if (!next_word)
-	return (NUll);
+	return (NULL);
 while ((s[cursor] != c) && s[cursor])
-	next_word[i++] = s[cursor++]
+	next_word[i++] = s[cursor++];
 next_word[i] = '\0';
 return (next_word);
 }

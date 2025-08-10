@@ -6,11 +6,11 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 22:28:26 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/08/07 23:40:29 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/08/10 13:45:53 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../hdrs/push_swap.h"
+#include "../../hdr/push_swap.h"
 
 static long ft_atoi_long(const char *s)
 {
@@ -37,7 +37,7 @@ static void append_node(t_stack_node **stack, int n)
 {
 	//Define a function taht searches for the last node to append to the linked list
 	t_stack_node	*node;
-	t_stack_node	last_node;
+	t_stack_node	*last_node;
 	
 	if(!stack)
 		return ;

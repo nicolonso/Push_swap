@@ -3,14 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nalfonso <nalfonso@student.42.fr>          +#+  +:+       +#+         #
+#    By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/15 21:43:18 by nalfonso          #+#    #+#              #
-#    Updated: 2025/05/06 20:35:57 by nalfonso         ###   ########.fr        #
+#    Updated: 2025/08/10 13:41:25 by nalfonso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+
+//Update the libft with the printf to put all together
 
 SRCS = ft_isalpha.c \
        ft_isdigit.c \
