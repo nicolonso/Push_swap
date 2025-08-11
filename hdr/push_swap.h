@@ -25,15 +25,22 @@ typedef struct s_stack_node // A cointainer for data ,enclosed by {} ,'s' for st
 
 //Stack initiation
 
-void init_stack_a(t_stack_node **a, char **av);
-char **split(char *s, char c);
+void 			init_stack_a(t_stack_node **a, char **av);
+char 			**split(char *s, char c);
 
 //Nodes intiation
 
 t_stack_node	*get_cheapest(t_stack_node *stack);
-void	prep_for_push(t_stack_node	**stack, t_stack_node *top_node, char stack_name);
+void			prep_for_push(t_stack_node	**stack, t_stack_node *top_node, char stack_name);
 
 //Stack utils
+
+int 			stack_len(t_stack_node *stack);
+bool			sorted_stack(t_stack_node *stack);
+t_stack_node 	*find_last(t_stack_node	*stack);
+t_stack_node 	*find_min(t_stack_node *stack);
+t_stack_node *find_max(t_stack_node *stack);
+
 
 //Commands
 

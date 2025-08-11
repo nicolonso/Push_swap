@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 17:12:38 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/08/10 22:15:16 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/08/11 19:57:34 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void rotate(t_stack_node **stack)
 		
 	if (!*stack || !(*stack)->next)
 		return ;
-	last_node = find_last(*stack);//Create this function 
+	last_node = find_last(*stack);
 	last_node->next = *stack;
 	*stack = (*stack)->next;
 	(*stack)->prev = NULL;
