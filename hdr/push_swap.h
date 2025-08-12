@@ -3,10 +3,10 @@
 
 #include <limits.h> //To define MIN and MAX macros
 #include <stdbool.h> //To use bool flags.
-#include "../Lib/hdr/ft_printf.h"//My printf version
 #include "../Lib/hdr/libft.h"//My libft
 
 //Structed
+
 typedef struct s_stack_node // A cointainer for data ,enclosed by {} ,'s' for struct
 {
     int                            nbr;
@@ -19,6 +19,8 @@ typedef struct s_stack_node // A cointainer for data ,enclosed by {} ,'s' for st
     struct s_stack_node            *prev;
 }   t_stack_node;
 
+//Main
+int main(int ac, char **av);
 
 //Handle errors
 
@@ -35,26 +37,26 @@ void			prep_for_push(t_stack_node	**stack, t_stack_node *top_node, char stack_na
 
 //Stack utils
 
-int 			stack_len(t_stack_node *stack);
-bool			sorted_stack(t_stack_node *stack);
-t_stack_node 	*find_last(t_stack_node	*stack);
-t_stack_node 	*find_min(t_stack_node *stack);
-t_stack_node *find_max(t_stack_node *stack);
+// int 			stack_len(t_stack_node *stack);
+// bool			sorted_stack(t_stack_node *stack);
+ t_stack_node 	*find_last(t_stack_node	*stack);
+// t_stack_node 	*find_min(t_stack_node *stack);
+// t_stack_node *find_max(t_stack_node *stack);
 
 
 //Commands
 
-void			sa(t_stack_node **a, bool print);
-void			sb(t_stack_node **b, bool print);
-void			ss(t_stack_node **a, t_stack_node **b, bool print);
-void			ra(t_stack_node **a, bool print);
-void			rb(t_stack_node **b, bool print);
-void			rr(t_stack_node **a, t_stack_node **b, bool print);
-void			rra(t_stack_node **a, bool print);
-void			rrb(t_stack_node **b, bool print);
-void			rrr(t_stack_node **a, t_stack_node **b, bool print);
-void			pa(t_stack_node **a, t_stack_node **b, bool print);
-void			pb(t_stack_node **b, t_stack_node **a, bool print);
+// void			sa(t_stack_node **a, bool print);
+// void			sb(t_stack_node **b, bool print);
+// void			ss(t_stack_node **a, t_stack_node **b, bool print);
+// void			ra(t_stack_node **a, bool print);
+// void			rb(t_stack_node **b, bool print);
+// void			rr(t_stack_node **a, t_stack_node **b, bool print);
+// void			rra(t_stack_node **a, bool print);
+// void			rrb(t_stack_node **b, bool print);
+// void			rrr(t_stack_node **a, t_stack_node **b, bool print);
+// void			pa(t_stack_node **a, t_stack_node **b, bool print);
+// void			pb(t_stack_node **b, t_stack_node **a, bool print);
 
 //Algorithm
 

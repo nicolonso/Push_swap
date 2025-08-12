@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 16:20:20 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/08/10 21:52:23 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/08/12 19:47:29 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,22 +27,22 @@ static void swap(t_stack_node	**stack)
 
 void	sa(t_stack_node	**a, bool print)
 {
-	swap(a);
+	swap(*&a);
 	if (!print)
 		ft_printf("sa\n");
 }
 
 void	sb(t_stack_node	**b, bool print)
 {
-	swap(b);
+	swap(*&b);
 	if (!print)
 		ft_printf("sb\n");
 }
 
 void	ss(t_stack_node		**a, t_stack_node	**b,	bool print)
 {
-	swap(a);
-	swap(b);//Exist one way that i could do this at the same time and wrote in one line ?
+	swap(*&a);
+	swap(*&b);//Exist one way that i could do this at the same time and wrote in one line ?
 	if(!print)
 		ft_printf("ss\n");
 }

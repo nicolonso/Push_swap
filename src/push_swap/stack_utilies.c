@@ -6,13 +6,13 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 19:47:29 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/08/11 23:01:59 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/08/12 19:58:38 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../hdr/push_swap.h"
 
-t_stack_node *find_last(t_stack_node	*stack)
+t_stack_node *find_last(t_stack_node *stack)
 {
 	if(!stack)
 		return (NULL);

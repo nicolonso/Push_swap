@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nalfonso <nalfonso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 13:22:20 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/05/06 18:34:07 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/08/12 19:17:31 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,15 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include <stdarg.h>
+
+//Definition to my printf
+# define CHEXADECIMAL "0123456789ABCDEF"
+# define HEXADECIMAL "0123456789abcdef"
+
+typedef unsigned long long	t_number;
+
+//Libft Functions
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -51,5 +60,10 @@ char	**ft_split(char const *s, char c);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+
+
+//Printf function
+
+int		ft_printf(const char *format, ...);
 
 #endif

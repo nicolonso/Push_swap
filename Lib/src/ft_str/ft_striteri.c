@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nalfonso <nalfonso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 18:21:18 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/05/05 18:30:21 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/08/12 19:04:26 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+#include "../../hdr/libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {

@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 17:15:38 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/08/10 22:20:46 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/08/12 19:58:56 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,22 +28,22 @@ static void reverse(t_stack_node **stack)
 
 void rra(t_stack_node **a, bool print)
 {
-	reverse(*a);
+	reverse(*&a);
 	if (!print)
 		ft_printf("rra\n");
 }
 
 void rrb(t_stack_node **b, bool print)
 {
-	reverse(*b);
+	reverse(*&b);
 	if (!print)
 		ft_printf("rrb\n");
 }
 
 void rrr(t_stack_node **a, t_stack_node **b, bool print)
 {
-	reverse (*a);
-	reverse (*b);
+	reverse (*&a);
+	reverse (*&b);
 	if (!print)
 		ft_printf("rrr\n");
 }

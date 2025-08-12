@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 17:10:25 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/08/10 22:27:05 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/08/12 18:45:33 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,14 @@ static void push(t_stack_node **dest, t_stack_node **src)
 
 void	pa(t_stack_node	**a, t_stack_node **b, bool	print)
 {
-	push (*a, *b);
+	push(*&a, *&b);
 	if (!print)
 		ft_printf("pa\n");
 }
 
 void	pb(t_stack_node	**a, t_stack_node **b, bool	print)
 {
-	push (*b, *a);
+	push (*&b, *&a);
 	if (!print)
 		ft_printf("pb\n");
 }

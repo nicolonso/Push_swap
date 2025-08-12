@@ -1,0 +1,36 @@
+1. I need to impliment this to my libft on my MAKEFILE
+FTLST_DIR		=	$(SRC_DIR)ft_lst/ft_lstadd_back.c \
+					$(SRC_DIR)ft_lst/ft_lstadd_front.c \
+					$(SRC_DIR)ft_lst/ft_lstclear.c \
+					$(SRC_DIR)ft_lst/ft_lstdelone.c \
+					$(SRC_DIR)ft_lst/ft_lstiter.c \
+					$(SRC_DIR)ft_lst/ft_lstlast.c \
+					$(SRC_DIR)ft_lst/ft_lstmap.c \
+					$(SRC_DIR)ft_lst/ft_lstnew.c \
+					$(SRC_DIR)ft_lst/ft_lstsize.c 
+
+
+I need to incluide thi after on my MAKEFILE 
+						$(SRC_DIR)commands/sort_stacks.c \
+						$(SRC_DIR)commands/sort_three.c \
+When building th function 
+also this for push swap folder
+
+$(SRC_DIR)push_swap/handle_errors.c \
+						$(SRC_DIR)push_swap/init_a_to_b.c \
+						$(SRC_DIR)push_swap/init_b_to_a.c \
+						$(SRC_DIR)push_swap/stack_init.c \
+						$(SRC_DIR)push_swap/stack_utils.c
+
+
+# Source Files
+COMMANDS_DIR		=	$(SRC_DIR)Commands/push.c \
+						$(SRC_DIR)Commands/reverse.c \
+						$(SRC_DIR)Commands/rotate.c \
+						$(SRC_DIR)Commands/swap.c
+
+PUSH_SWAP_DIR		=	$(SRC_DIR)push_swap/push_swap.c \
+						$(SRC_DIR)push_swap/split.c \
+
+# Concatenate all source files
+SRCS 				= $(COMMANDS_DIR) $(PUSH_SWAP_DIR)
