@@ -16,11 +16,8 @@ I need to incluide thi after on my MAKEFILE
 When building th function 
 also this for push swap folder
 
-$(SRC_DIR)push_swap/handle_errors.c \
 						$(SRC_DIR)push_swap/init_a_to_b.c \
 						$(SRC_DIR)push_swap/init_b_to_a.c \
-						$(SRC_DIR)push_swap/stack_init.c \
-						$(SRC_DIR)push_swap/stack_utils.c
 
 
 # Source Files

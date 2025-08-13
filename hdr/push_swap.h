@@ -20,10 +20,14 @@ typedef struct s_stack_node // A cointainer for data ,enclosed by {} ,'s' for st
 }   t_stack_node;
 
 //Main
-int main(int ac, char **av);
+int 			main(int ac, char **av);
 
 //Handle errors
 
+void 			free_stack(t_stack_node	**stack);
+void			free_errors(t_stack_node	**a);
+int 			error_duplicate(char *str);
+int				error_syntax(char *str);
 
 //Stack initiation
 

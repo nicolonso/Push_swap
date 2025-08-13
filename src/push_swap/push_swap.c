@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 18:13:41 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/08/12 22:45:45 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/08/13 19:06:07 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,12 @@ int main(int ac, char **av)
 	else if (ac == 2)
 		av = split(av[1], ' ');//Call ''split()'' to extract each substring
 	init_stack_a(&a, av + 1);//Initiate stack  'a' , which also handle errors 
-	while(a->next)
+	while(a)
 	{
 		print_node(a);
 		a = a->next;
 	}
+	print_node(a);
 	// if (!stack_sorted(a))
 	// {
 	// 	if (stack_len(a) == 2)
@@ -51,8 +52,7 @@ int main(int ac, char **av)
 	// 	else
 	// 		sort_stacks(&a, &b);
 	// }
-	// free_stack(&a);//clean up the stack
-	ft_printf("Hola");
+	free_stack(&a);//clean up the stack
 	return (0);
 }
 
