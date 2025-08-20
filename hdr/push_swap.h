@@ -26,7 +26,7 @@ int 			main(int ac, char **av);
 
 void 			free_stack(t_stack_node	**stack);
 void			free_errors(t_stack_node	**a);
-int 			error_duplicate(char *str);
+int 			error_duplicate(t_stack_node *a, int n);
 int				error_syntax(char *str);
 
 //Stack initiation
@@ -41,27 +41,31 @@ void			prep_for_push(t_stack_node	**stack, t_stack_node *top_node, char stack_na
 
 //Stack utils
 
-// int 			stack_len(t_stack_node *stack);
-// bool			sorted_stack(t_stack_node *stack);
- t_stack_node 	*find_last(t_stack_node	*stack);
-// t_stack_node 	*find_min(t_stack_node *stack);
-// t_stack_node *find_max(t_stack_node *stack);
+int 			stack_len(t_stack_node *stack);
+bool			sorted_stack(t_stack_node *stack);
+t_stack_node 	*find_last(t_stack_node	*stack);
+//t_stack_node 	*find_min(t_stack_node *stack);
+t_stack_node 	*find_max(t_stack_node *stack);
 
 
 //Commands
 
-// void			sa(t_stack_node **a, bool print);
-// void			sb(t_stack_node **b, bool print);
-// void			ss(t_stack_node **a, t_stack_node **b, bool print);
-// void			ra(t_stack_node **a, bool print);
-// void			rb(t_stack_node **b, bool print);
-// void			rr(t_stack_node **a, t_stack_node **b, bool print);
-// void			rra(t_stack_node **a, bool print);
-// void			rrb(t_stack_node **b, bool print);
-// void			rrr(t_stack_node **a, t_stack_node **b, bool print);
-// void			pa(t_stack_node **a, t_stack_node **b, bool print);
-// void			pb(t_stack_node **b, t_stack_node **a, bool print);
+void			sa(t_stack_node **a, bool print);
+void			sb(t_stack_node **b, bool print);
+void			ss(t_stack_node **a, t_stack_node **b, bool print);
+void			ra(t_stack_node **a, bool print);
+void			rb(t_stack_node **b, bool print);
+void			rr(t_stack_node **a, t_stack_node **b, bool print);
+void			rra(t_stack_node **a, bool print);
+void			rrb(t_stack_node **b, bool print);
+void			rrr(t_stack_node **a, t_stack_node **b, bool print);
+void			pa(t_stack_node **a, t_stack_node **b, bool print);
+void			pb(t_stack_node **b, t_stack_node **a, bool print);
 
 //Algorithm
+
+void			sort_three(t_stack_node **a);
+void			sort_stacks(t_stack_node	**a, t_stack_node	**b);
+
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 19:47:29 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/08/12 19:58:38 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/08/20 19:56:13 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int stack_len(t_stack_node	*stack)
 	int	count;
 
 	count = 0;
-	while (stack->next)
+	while (stack)
 	{
 		stack = stack->next;
 		count++;
@@ -54,7 +54,7 @@ t_stack_node *find_max(t_stack_node *stack)
 
 	if (!stack)
 		return (NULL);
-	max = LONG_MAX;
+	max = LONG_MIN;//Why this isnt working with long max???, find the difference
 	while (stack)
 	{
 		if (stack->nbr > max)

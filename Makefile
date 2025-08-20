@@ -16,7 +16,9 @@ RM					= rm -f
 COMMANDS_DIR		=	$(SRC_DIR)Commands/push.c \
 						$(SRC_DIR)Commands/reverse.c \
 						$(SRC_DIR)Commands/rotate.c \
-						$(SRC_DIR)Commands/swap.c
+						$(SRC_DIR)Commands/swap.c \
+						$(SRC_DIR)Commands/sort_three.c \
+						$(SRC_DIR)Commands/sort_stacks.c 
 
 PUSH_SWAP_DIR		=	$(SRC_DIR)push_swap/push_swap.c \
 						$(SRC_DIR)push_swap/split.c \

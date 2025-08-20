@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 18:56:57 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/08/13 19:56:04 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/08/20 18:51:28 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,24 +30,25 @@ void free_stack(t_stack_node	**stack)
 
 int	error_syntax(char *str)
 {
-	if (!(str == '+' || str == '-' || (str >= '0' && str <= '9')))
+	if (!(*str == '+' || *str == '-' || (*str >= '0' && *str <= '9')))
 		return (1);
-	if (!(str[1] == '+' || str[1] == '-' || (str[1] >= '0' && str[1] <= '9')))
+	if (((str[1] == '+' || str[1] == '-') && !(str[1] >= '0' && str[1] <= '9')))
 		return (1);
 	while (*++str)
 	{
-		if (!(str >= '0' && str <= '9'))
+		if (!(*str >= '0' && *str <= '9'))
 			return (1);
 	}
 	return (0);
 }
 
-int error_duplicate(char *str)
+int error_duplicate(t_stack_node	*a, int	n)
 {
-	while (*++str)
+	while (a)
 	{
-		if (*str == *str + 1)
+		if (a->nbr == n)
 			return (1);
+		a = a->next;
 	}
 	return (0);
 }

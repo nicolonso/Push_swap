@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 22:28:26 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/08/13 19:56:36 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/08/20 20:28:26 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static long ft_atoi_long(const char *s)
 
 static void append_node(t_stack_node **stack, int n)
 {
-	//Define a function taht searches for the last node to append to the linked list
+	//Define a function that searches for the last node to append to the linked list
 	t_stack_node	*node;
 	t_stack_node	*last_node;
 	
@@ -73,7 +73,9 @@ void init_stack_a(t_stack_node **a, char **av)
 		if (error_syntax(av[i]))
 			free_errors(a);
 		n = ft_atoi_long(av[i]);
-		if (n > INT_MAX || n < INT_MIN)//Check overflow
+		// if (n > INT_MAX || n < INT_MIN)//Check overflow
+		// 	free_errors(a);
+		if (n < INT_MIN || n > INT_MAX)//Check overflow
 			free_errors(a);
 		if(error_duplicate(*a, (int)n))
 			free_errors(a);
