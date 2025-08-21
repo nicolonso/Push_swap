@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 22:28:26 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/08/20 20:28:26 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/08/21 19:37:15 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,38 +83,38 @@ void init_stack_a(t_stack_node **a, char **av)
 	}
 }
 
-// t_stack_node	*get_cheapest(t_stack_node *stack)
-// {
-// 	 //Define a function that searches for the cheapest node, that is set by bool
-// 	if(!stack)
-// 		return (NULL);
-// 	while (stack)
-// 	{
-// 		if (stack->cheapest)
-// 			return(stack);
-// 		stack = stack->next;
-// 	}
-// 	return (NULL);
-// }
+t_stack_node	*get_cheapest(t_stack_node *stack)
+{
+	 //Define a function that searches for the cheapest node, that is set by bool
+	if(!stack)
+		return (NULL);
+	while (stack)
+	{
+		if (stack->cheapest)
+			return(stack);
+		stack = stack->next;
+	}
+	return (NULL);
+}
 
-// void	prep_for_push(t_stack_node	**stack, t_stack_node *top_node, char stack_name)
-// {
-// 	while (*stack != top_node)//Check if the required node is not already the first node
-// 	{
-// 		if (stack_name == 'a')
-// 		{
-// 			if (top_node->above_median)
-// 			ra(stack, false);
-// 			else
-// 				rra(stack, false);	
-// 		}
-// 		else if (stack_name == 'b')
-// 		{
-// 			if (top_node->above_median)
-// 				rb(stack, false);
-// 			else
-// 				rrb(stack, false);
-// 		}
-// 	}
+void	prep_for_push(t_stack_node	**stack, t_stack_node *top_node, char stack_name)
+{
+	while (*stack != top_node)//Check if the required node is not already the first node
+	{
+		if (stack_name == 'a')
+		{
+			if (top_node->above_median)
+			ra(stack, false);
+			else
+				rra(stack, false);	
+		}
+		else if (stack_name == 'b')
+		{
+			if (top_node->above_median)
+				rb(stack, false);
+			else
+				rrb(stack, false);
+		}
+	}
 	
-// }
+}

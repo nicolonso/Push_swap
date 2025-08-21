@@ -10,9 +10,7 @@ FTLST_DIR		=	$(SRC_DIR)ft_lst/ft_lstadd_back.c \
 					$(SRC_DIR)ft_lst/ft_lstsize.c 
 
 
-I need to incluide thi after on my MAKEFILE 
-						$(SRC_DIR)commands/sort_stacks.c \
-						$(SRC_DIR)commands/sort_three.c \
+
 When building th function 
 also this for push swap folder
 

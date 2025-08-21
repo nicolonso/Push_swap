@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 18:13:41 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/08/20 21:20:52 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/08/21 20:43:37 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ int main(int ac, char **av)
 			sort_stacks(&a, &b);
 	}
 	free_stack(&a);//clean up the stack
+	free(a);
+	free(b);
 	return (0);
 }
 

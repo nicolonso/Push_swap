@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 19:47:29 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/08/20 19:56:13 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/08/21 20:12:38 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ t_stack_node *find_min(t_stack_node *stack)
 	
 	if(!stack)
 		return (NULL);
-	min = LONG_MIN;
+	min = LONG_MAX;
 	while (stack)
 	{
 		if (stack->nbr < min)
