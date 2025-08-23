@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 18:13:41 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/08/21 20:43:37 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/08/23 17:14:00 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ int main(int ac, char **av)
 			sa(&a, true);//search more about the logig in bool 
 		else if (stack_len(a) == 3)
 			sort_three(&a);
-		else
-			sort_stacks(&a, &b);
+		// else
+		// 	sort_stacks(&a, &b);
 	}
 	free_stack(&a);//clean up the stack
 	free(a);

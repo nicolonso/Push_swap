@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 22:28:26 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/08/21 19:37:15 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/08/23 20:44:49 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void append_node(t_stack_node **stack, int n)
 	
 	if(!stack)
 		return ;
-	node = malloc(sizeof(t_stack_node));//Allocate memory for the newnode
+	node = malloc(sizeof(t_stack_node));//Allocate memory for1 the newnode
 	if (!node)
 		return ;//Search more info. about this
 	node->next = NULL;//Set the nxt pointer of the new node to NULL becouse it will be the last node in the list
