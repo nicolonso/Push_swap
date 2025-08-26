@@ -17,19 +17,24 @@ COMMANDS_DIR		=	$(SRC_DIR)Commands/push.c \
 						$(SRC_DIR)Commands/reverse.c \
 						$(SRC_DIR)Commands/rotate.c \
 						$(SRC_DIR)Commands/swap.c \
-						$(SRC_DIR)Commands/sort_three.c \
-						$(SRC_DIR)Commands/sort_stacks.c 
 
 PUSH_SWAP_DIR		=	$(SRC_DIR)push_swap/push_swap.c \
 						$(SRC_DIR)push_swap/split.c \
 						$(SRC_DIR)push_swap/stack_utilies.c \
 						$(SRC_DIR)push_swap/stack_init.c \
 						$(SRC_DIR)push_swap/handle_errors.c \
-						$(SRC_DIR)push_swap/stack_init_a_to_b.c \
-						$(SRC_DIR)push_swap/stack_init_b_to_a.c \
+
+ALGORITHM_DIR		=	$(SRC_DIR)Algorithm/sort_stacks.c \
+						$(SRC_DIR)Algorithm/sort_three.c \
+						$(SRC_DIR)Algorithm/stack_init_a_to_b.c \
+						$(SRC_DIR)Algorithm/stack_init_b_to_a.c \
+
+
+
+
 
 # Concatenate all source files
-SRCS 				= $(COMMANDS_DIR) $(PUSH_SWAP_DIR)
+SRCS 				= $(COMMANDS_DIR) $(PUSH_SWAP_DIR) $(ALGORITHM_DIR)
 
 # Apply the pattern substitution to each source file in SRC and produce a corresponding list of object files in the OBJ_DIR
 OBJ 				= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
