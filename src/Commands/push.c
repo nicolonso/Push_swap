@@ -57,3 +57,20 @@ void	pb(t_stack_node	**a, t_stack_node **b, bool	print)
 	if (!print)
 		ft_printf("pb\n");
 }
+
+int main(void)
+{
+		t_stack_node *b = NULL;
+		t_stack_node *a = NULL;
+		int i = -1;
+		
+		while (++i < 5)
+		{
+				a->nbr = i;
+				a = a->next;
+				}
+			pb(a, b, false);
+			ft_printf("b : %d\n", (b)->nbr);
+			return (0);
+}
+
