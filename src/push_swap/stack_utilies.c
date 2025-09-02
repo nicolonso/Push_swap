@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 19:47:29 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/08/21 20:12:38 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/09/02 20:08:27 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,38 +49,30 @@ bool sorted_stack(t_stack_node *stack)
 
 t_stack_node *find_max(t_stack_node *stack)
 {
-	long			max;
 	t_stack_node	*max_node;
 
 	if (!stack)
 		return (NULL);
-	max = LONG_MIN;//Why this isnt working with long max???, find the difference
+	max_node = stack;
 	while (stack)
 	{
-		if (stack->nbr > max)
-		{
-			max = stack->nbr;
+		if (stack->nbr > max_node->nbr)
 			max_node = stack;
-		}
 		stack = stack->next;
 	}
 	return (max_node);
 }
 t_stack_node *find_min(t_stack_node *stack)
 {
-	long			min;
 	t_stack_node	*min_node;
 	
 	if(!stack)
 		return (NULL);
-	min = LONG_MAX;
+	min_node = stack;
 	while (stack)
 	{
-		if (stack->nbr < min)
-		{
-			min = stack->nbr;
+		if (stack->nbr < min_node->nbr)
 			min_node = stack;
-		}
 		stack = stack->next;	
 	}
 	return (min_node);

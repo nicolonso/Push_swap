@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 18:54:28 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/08/26 22:40:43 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/09/02 19:15:55 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,10 @@ static void set_target_b(t_stack_node	*a, t_stack_node *b)
 	t_stack_node	*target_node;
 	long			best_match_index;
 
-	if (!a || !b)
+	ft_printf("here ?\n");
+	if (!a || !b)//here is the problem is exit here 
 		return ;
-	//best_match_index = 0;
-	//ft_printf("b->nbr=%d, best_match_index=%ld, target_node=%p\n",b->nbr, best_match_index, (void*)target_node);
-	//ft_printf("Here's the error before to enter on this loop?\n");
-	//target_node = NULL;
-		//ft_printf("b->nbr=%d, best_match_index=%ld, target_node=%p\n",b->nbr, best_match_index, (void*)target_node);
-		//ft_printf("B exist?\n");
+	ft_printf("Is this working ? , %p, b : %d\n", b, b->nbr);
 	while (b)
 	{
 		best_match_index = LONG_MAX;
@@ -56,7 +52,7 @@ static void set_target_b(t_stack_node	*a, t_stack_node *b)
 
 void			init_nodes_b(t_stack_node *a, t_stack_node *b)
 {
-	ft_printf("Here's the error\n");
+	ft_printf("Until now all the error is aim here\n");
 	set_target_b(a, b);
 	ft_printf("Here's the error before to set target in b?\n");
 	current_index(a);

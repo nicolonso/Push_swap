@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 18:54:36 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/08/26 22:47:56 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/09/02 20:14:49 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,9 @@ void current_index(t_stack_node *stack)
 		return ;
 	i = 0;
 	median = stack_len(stack) / 2;
-	ft_printf("Is here??? \n");
 	while (stack)
 	{
 		stack->index = i;
-		ft_printf("i : %i\n", i);
 		if (i <= median)
 			stack->above_median = true;
 		else
@@ -37,19 +35,23 @@ void current_index(t_stack_node *stack)
 
 static void	set_target_a(t_stack_node *a, t_stack_node *b)//Find `a` node's target in stack `b`
 {
-	t_stack_node	*current_b; //To store the pointer to the current node in stack `b` and iterate through each node following
-	t_stack_node	*target_node; //To store the pointer to the target node in stack `b`
-	long			best_match_index; //In this case, the best match indexe stores the value of the "closest smaller number" so far
+	t_stack_node	*current_b;
+	t_stack_node	*target_node;
+	long			best_match_index;
 
+	ft_printf("Is my set target the problem ???\n");
+	if (!b)//This means that for some reason this is null
+		return ;
 	while (a) //As long as we have nodes in stack `a`
 	{
+		ft_printf("IIs enter here ???\n");
 		best_match_index = LONG_MIN; //Assign the smallest `long` as the closest smaller number so far
 		current_b = b; //Assign to `current_b` the current `b` node
-		target_node = NULL;
+		//target_node = NULL;
 		while (current_b) //Iteratively search through all the nodes in stack `b` until the end of the stack is reached
 		{
-			if (current_b->nbr < a->nbr 
-				&& current_b->nbr > best_match_index) //Check if `b` node is smaller than `a` node && bigger than the closest smaller number so far
+			ft_printf("???\n");
+			if (current_b->nbr < a->nbr && current_b->nbr > best_match_index) //Check if `b` node is smaller than `a` node && bigger than the closest smaller number so far
 			{
 				best_match_index = current_b->nbr; //If so, update the value of the closest smaller number so far
 				target_node = current_b; //Assign the current `b` node as the `target_node`
@@ -62,6 +64,7 @@ static void	set_target_a(t_stack_node *a, t_stack_node *b)//Find `a` node's targ
 			a->target_node = target_node; //If no "closer smaller number" is found, and the best match has changed
 		a = a->next; //Move to the next `a` node to find it's target `b` node
 	}
+	return ;
 }
 
 static void	cost_analysis_a(t_stack_node *a, t_stack_node *b) //Define a functio that analyses the cost of the `a` node along with it's target `b` node, which is the sum of the number of instructions for both the nodes to rotate to the top of their stacks
@@ -71,8 +74,10 @@ static void	cost_analysis_a(t_stack_node *a, t_stack_node *b) //Define a functio
 
 	len_a = stack_len(a);
 	len_b = stack_len(b);
+	ft_printf("IS this a little issue ? who knows?? of course me no\n");
 	while (a) //Loop through each node until the end of the stack is reached
 	{
+		ft_printf("just to be sure\n");
 		a->push_cost = a->index; //Assign the current `a` node's push cost, its' index value
 		if (!(a->above_median)) //Check if the above_median data is false, meaning it is below median
 			a->push_cost = len_a - (a->index); //If so, update `a` node's push cost to the stack's length - index
@@ -89,6 +94,7 @@ void	set_cheapest(t_stack_node *stack) //Define a function that sets a node's `c
 	long			cheapest_value; //To store the value of the cheapest node so far
 	t_stack_node	*cheapest_node; //To store a pointer to the cheapest node so far
 
+	ft_printf("or is here ???\n");
 	if (!stack) //Check for an empty stack
 		return ;
 	cheapest_value = LONG_MAX; //Assign the biggest `long` as the cheapest value so far
@@ -108,7 +114,11 @@ void	init_nodes_a(t_stack_node *a, t_stack_node *b) //Define a function that com
 {
 	current_index(a);
 	current_index(b);
+	if (!b)
+		return;
+	ft_printf("Here are we\n");
 	set_target_a(a, b);
+	ft_printf("Here are we\n");
 	cost_analysis_a(a, b);
 	set_cheapest(a);
 }

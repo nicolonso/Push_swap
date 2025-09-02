@@ -4,6 +4,7 @@
 #include <limits.h> //To define MIN and MAX macros
 #include <stdbool.h> //To use bool flags.
 #include "../Lib/hdr/libft.h"//My libft
+#include <stdio.h>
 
 //Structed
 
