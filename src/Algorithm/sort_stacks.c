@@ -79,14 +79,16 @@ void			sort_stacks(t_stack_node	**a, t_stack_node	**b)
 	
 	// lenght_a = stack_len(*a);
 
+	t_stack_node	*temp;
 
-	ft_printf("My first test a: %p\n",(void*)*a);
-	pb(*&b, *&a, false);
-	while (*a)
+	temp = *a;
+	ft_printf("My first test a: %p\n",(void*)temp);
+	while (temp)
 	{
-		print_node(*a);
-		*a = (*a)->next;
+		print_node(temp);
+		temp = (*temp)->next;
 	}
+	pb(*&b, *&a, false);
 	// print_node(*b);
 	// printf("Before pb: *a=%p *b=%p\n", (void *)*a, (void *)*b);
 	// if (lenght_a-- > 3 && !sorted_stack(*a))
