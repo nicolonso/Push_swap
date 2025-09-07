@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 18:54:36 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/09/07 15:04:16 by nicolas          ###   ########.fr       */
+/*   Updated: 2025/09/07 19:29:13 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ static void	cost_analysis_a(t_stack_node *a, t_stack_node *b)
 			a->push_cost += len_b - (a->target_node->index);
 		a = a->next;
 	}
-	//ft_printf("target node : %d\n",a->target_node);
 }
 
 void	set_cheapest(t_stack_node *stack)

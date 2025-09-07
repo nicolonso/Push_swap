@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_errors.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 18:56:57 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/08/26 21:42:59 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/09/07 19:34:52 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int error_duplicate(t_stack_node	*a, int	n)
 void	free_errors(t_stack_node	**a)
 {
 	free_stack(*&a);
-	//ft_printf("Error\n");//Fix the error of my printf or use write(2, "Error\n", 6);
-	write(2,"Error\n", 6);
+	write(2 ,"Error\n", 6);
 	exit(1);
 }
+

@@ -1,14 +1,13 @@
 #ifndef PUSH_SWAP
 # define PUSH_SWAP
 
-#include <limits.h> //To define MIN and MAX macros
-#include <stdbool.h> //To use bool flags.
-#include "../Lib/hdr/libft.h"//My libft
-#include <stdio.h>
+#include <limits.h>
+#include <stdbool.h>
+#include "../Lib/hdr/libft.h"
 
 //Structed
 
-typedef struct s_stack_node // A cointainer for data ,enclosed by {} ,'s' for struct
+typedef struct s_stack_node
 {
     int                            nbr;
     int                            index;
@@ -29,6 +28,7 @@ void 			free_stack(t_stack_node	**stack);
 void			free_errors(t_stack_node	**a);
 int 			error_duplicate(t_stack_node *a, int n);
 int				error_syntax(char *str);
+void            free_split(char **split);
 
 //Stack initiation
 
@@ -37,14 +37,14 @@ char 			**split(char *s, char c);
 
 //Nodes intiation
 
-void			init_nodes_a(t_stack_node *a, t_stack_node *b); //To prep all nodes for pushing `a` to `b`
-void			init_nodes_b(t_stack_node *a, t_stack_node *b); //To prep all nodes for pushing `b` back to `a`
-void			current_index(t_stack_node *stack); //Set the node's current index
-void			set_cheapest(t_stack_node *stack); //Set the stack's cheapest node
-t_stack_node	*get_cheapest(t_stack_node *stack); //Get the cheapest node of a stack
-void			prep_for_push(t_stack_node **s, t_stack_node *n, char c); //Prep the required nodes on top for pushing
-//void            prep_push_a(t_stack_node	*a, t_stack_node *top_node);
-//void            prep_push_b(t_stack_node	*b, t_stack_node *top_node);
+void			init_nodes_a(t_stack_node *a, t_stack_node *b);
+void			init_nodes_b(t_stack_node *a, t_stack_node *b);
+void			current_index(t_stack_node *stack);
+void			set_cheapest(t_stack_node *stack);
+t_stack_node	*get_cheapest(t_stack_node *stack);
+void			prep_for_push(t_stack_node **s, t_stack_node *n, char c);
+
+
 //Stack utils
 
 int 			stack_len(t_stack_node *stack);
@@ -72,6 +72,5 @@ void			pb(t_stack_node **b, t_stack_node **a, bool print);
 
 void			sort_three(t_stack_node **a);
 void			sort_stacks(t_stack_node	**a, t_stack_node	**b);
-
 
 #endif

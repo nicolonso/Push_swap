@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 16:20:20 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/09/06 19:02:30 by nicolas          ###   ########.fr       */
+/*   Updated: 2025/09/07 19:29:01 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,7 @@ void	sb(t_stack_node	**b, bool print)
 void	ss(t_stack_node		**a, t_stack_node	**b,	bool print)
 {
 	swap(*&a);
-	swap(*&b);//Exist one way that i could do this at the same time and wrote in one line ?
+	swap(*&b);
 	if(!print)
 		ft_printf("ss\n");
 }
-
-
-//Errors that i find while im doing these function 
-
-//expression must have pointer-to-struct-or-union type but it has type "t_stack_node **" (aka "struct s_stack_node **")C/C++(132)

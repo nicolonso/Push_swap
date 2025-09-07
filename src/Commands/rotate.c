@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 17:12:38 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/09/07 14:50:57 by nicolas          ###   ########.fr       */
+/*   Updated: 2025/09/07 19:37:53 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,3 @@ void	rr(t_stack_node **a, t_stack_node **b, bool print)
 	if (!print)
 		ft_printf("rr\n");
 }
-
-//Becouse when i send a vulue and taths is possible how they could work and sen that information
-//taht i going to print look for more info. about it 
