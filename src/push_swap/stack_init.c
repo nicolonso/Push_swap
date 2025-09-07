@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 22:28:26 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/08/26 21:06:20 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/09/07 14:49:03 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ static long ft_atoi_long(const char *s)
 {
 	long	result;
 	long	sign;
-	//Define a function that converts every string in a long value
 
 	result = 0;
 	sign = 1;
@@ -28,31 +27,30 @@ static long ft_atoi_long(const char *s)
 			sign = -sign;
 		s++;
 	}
-	while (*s >= '0' && *s <= '9')// I can use if is digit for libft -- Implement later
+	while (*s >= '0' && *s <= '9')
 		result = (result * 10) + (*s++ - 48);
 	return (result * sign);
 }
 
 static void append_node(t_stack_node **stack, int n)
 {
-	//Define a function that searches for the last node to append to the linked list
 	t_stack_node	*node;
 	t_stack_node	*last_node;
 	
 	if(!stack)
 		return ;
-	node = malloc(sizeof(t_stack_node));//Allocate memory for1 the newnode
+	node = malloc(sizeof(t_stack_node));
 	if (!node)
-		return ;//Search more info. about this
-	node->next = NULL;//Set the nxt pointer of the new node to NULL becouse it will be the last node in the list
-	node->nbr = n;//Set the 'next' data of the new node to 'n' value
-	node->cheapest = 0;//Initiliase cheapest to 0;
-	//other elements in the struct could be initialized as well but for now, this was only one causing a valgraind issue
-	if(!(*stack))//Check if the stack is empty or currently pointing to NULL, indicating a first nose needs to be found
-	{
-		*stack = node;//If empty, update the pointer *stack to point to the node, effectively making it the new head of the linked list 
-		node->prev = NULL;//Set the head node's previus pointer to NULL as it's the first node
-	}
+		return ;	
+	node->nbr = n;
+	node->next = NULL;
+	node->cheapest = 0;
+	node->above_median = 0;
+	if(!(*stack))
+	{	
+		*stack = node;
+		node->prev = NULL;
+	}	
 	else
 	{
 		last_node = find_last(*stack);
@@ -63,7 +61,6 @@ static void append_node(t_stack_node **stack, int n)
 
 void init_stack_a(t_stack_node **a, char **av)
 {
-	//Define a function that initiates stack `a` by handling any errors and appending required nodes to complete a stack
 	long	n;
 	long	i;
 	
@@ -73,13 +70,10 @@ void init_stack_a(t_stack_node **a, char **av)
 		if (error_syntax(av[i]))
 			free_errors(a);
 		n = ft_atoi_long(av[i]);
-		// if (n > INT_MAX || n < INT_MIN)//Check overflow
-		// 	free_errors(a);
-		if (n < INT_MIN || n > INT_MAX)//Check overflow
+		if (n < INT_MIN || n > INT_MAX)
 			free_errors(a);
 		if(error_duplicate(*a, (int)n))
 			free_errors(a);
 		append_node(a, (int)n);
 	}
 }
-

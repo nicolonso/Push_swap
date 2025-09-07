@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 17:12:38 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/08/20 20:30:00 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/09/07 14:50:57 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,24 @@
 
 static void rotate(t_stack_node **stack)
 {
-	t_stack_node	*last_node;
+	t_stack_node	*first;
+	t_stack_node	*last;
 		
 	if (!*stack || !(*stack)->next)
 		return ;
-	last_node = find_last(*stack);
-	last_node->next = *stack;
-	*stack = (*stack)->next;
+	first = *stack;
+	last = find_last(*stack);
+	*stack = first->next;
 	(*stack)->prev = NULL;
-	last_node->next->prev = last_node;
-	last_node->next->next = NULL;
+	last->next = first;
+	first->prev = last;
+	first->next = NULL;
 }
 
 void	ra(t_stack_node **a, bool print)
 {
 	rotate (*&a);
-	if (!print)//How can i know to manipulate my bool value to that happen
+	if (!print)
 		ft_printf("ra\n");
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 18:13:41 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/09/02 22:37:17 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/09/07 14:24:40 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,37 +54,16 @@ int main(int ac, char **av)
 		else
 			sort_stacks(&a, &b);
 	}
+	/* ft_printf("Values sorted in A\n");
+	t_stack_node	*tmp = a;
+	while(tmp)
+	{
+		ft_printf("%d\n",tmp->nbr);
+		tmp = tmp->next;
+	}
+	free(tmp); */
 	free_stack(&a);
 	free(a);
 	free(b);
 	return (0);
 }
-
-// int main(int ac, char **av)
-// {
-// 	(void)ac;
-// 	(void)av;
-// 	t_stack_node 	*node = malloc(sizeof(t_stack_node));
-// 	if (!node)
-// 		retur (ft_ft_printf("Error"),1);
-// 	node->nbr = 9999999;
-// 	node->index = 0;
-// 	node->push_cost = 5;
-// 	node->above_median = true;
-// 	node->cheapest = false;
-// 	node->target_node = (void*)33;
-// 	node->next = (void*)55;
-// 	node->prev = (void*)42;	
-// 	ftft_printf("nbr: %d\n", node->nbr);
-// 	ftft_printf("index: %d\n", node->index);
-// 	ftft_printf("push cost: %d\n", node->push_cost);
-// 	ftft_printf("above median: %s\n", node->above_median ? "true" : "false");
-// 	ftft_printf("cheapest: %s\n", node->cheapest ? "true" : "false");
-// 	ftft_printf("target node: %p\n", (void*)node->target_node);
-// 	ftft_printf("next: %p\n", (void*)node->next);
-// 	ftft_printf("prev: %p\n", (void*)node->prev);
-// 	free(node);
-// 	return (0);
-// }
-
-//Practice and do manually with a least 3 pointers in my linked list

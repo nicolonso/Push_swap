@@ -43,7 +43,8 @@ void			current_index(t_stack_node *stack); //Set the node's current index
 void			set_cheapest(t_stack_node *stack); //Set the stack's cheapest node
 t_stack_node	*get_cheapest(t_stack_node *stack); //Get the cheapest node of a stack
 void			prep_for_push(t_stack_node **s, t_stack_node *n, char c); //Prep the required nodes on top for pushing
-
+//void            prep_push_a(t_stack_node	*a, t_stack_node *top_node);
+//void            prep_push_b(t_stack_node	*b, t_stack_node *top_node);
 //Stack utils
 
 int 			stack_len(t_stack_node *stack);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 19:07:44 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/09/02 19:12:35 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/09/07 16:58:02 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	sort_three(t_stack_node **a)
 {
-	t_stack_node *biggest_node;//To store a pointer with the biggest node in stack 'a'
-	
-	biggest_node = find_max(*a);//Assign the value with the biggest ptr in my stack
+	t_stack_node *biggest_node;
+
+	biggest_node = find_max(*a);
 	if (biggest_node == *a)
 		ra(a, false);
 	else if ((*a)->next == biggest_node)
@@ -28,7 +28,6 @@ void	sort_three(t_stack_node **a)
 
 t_stack_node	*get_cheapest(t_stack_node *stack)
 {
-	 //Define a function that searches for the cheapest node, that is set by bool
 	if(!stack)
 		return (NULL);
 	while (stack)
@@ -42,22 +41,63 @@ t_stack_node	*get_cheapest(t_stack_node *stack)
 
 void	prep_for_push(t_stack_node	**stack, t_stack_node *top_node, char stack_name)
 {
-	while (*stack != top_node)//Check if the required node is not already the first node
+	while (*stack != top_node)
 	{
+		//ft_printf("is enter here ?\n");
 		if (stack_name == 'a')
 		{
+			//ft_printf("is enter here ?\n");
 			if (top_node->above_median)
+			{
+				//ft_printf("Value in stack = %d\n",(*stack)->nbr);
+				//ft_printf("Value in top_node = %d\n",(top_node)->nbr);
 				ra(stack, false);
+			}	
 			else
-				rra(stack, false);	
+				rra(*&stack, false);	
 		}
 		else if (stack_name == 'b')
 		{
+			//ft_printf("is enter here ?\n");
 			if (top_node->above_median)
-				rb(stack, false);
+				rb(*&stack, false);
 			else
-				rrb(stack, false);
+				rrb(*&stack, false);
 		}
+		// I need something to  advance inside the loop
 	}
-	
 }
+/* 
+void prep_push_a(t_stack_node	*a, t_stack_node *top_node)
+{
+	while(a != top_node)
+	{
+		if (top_node->above_median)
+			ra(&a,false);
+		else
+			rra(&a, false);
+	}
+}
+
+void prep_push_b(t_stack_node	*b, t_stack_node *top_node)
+{
+	int len;
+	int i;
+	
+	if (!b|| !top_node)
+        return ;
+	len = stack_len(b);
+	i = top_node->index;
+	if (top_node == find_max(b))
+        i = (top_node->index + 1) % len;
+    if (top_node->above_median)
+    {
+        while ((b)->index != i)
+            rb(&b, false);
+    }
+    else
+    {
+        while ((b)->index != i)
+            rrb(&b, false);
+	}
+} */ 
