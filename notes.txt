@@ -1,34 +1,46 @@
-5
-2 
-7
-1 
-6 
-3 
-9 
-4 
-8 
-78  
--78 
-55 
-100 
-22 
-30 
-54 
-99 
-77 
-76 
-75 
-74 
-73 
-101 
-102 
-103 
-104 
-105 
-106  
-108 
-109 
-200 
-500
-222 
+% ./push_swap 5 2 7 1 6 3 9 4 8
+pb
+pb
+The loop in prep : [1]
+Stack  : [b] , Value in cheapest or Top_node [5]
+rrb
+pb
+pb
+The loop in prep : [3]
+Stack  : [b] , Value in cheapest or Top_node [5]
+rrb
+The loop in prep : [2]
+Stack  : [b] , Value in cheapest or Top_node [5]
+rrb
+pb
+The loop in prep : [3]
+Stack  : [a] , Value in cheapest or Top_node [9]
+ra
+The loop in prep : [4]
+Stack  : [b] , Value in cheapest or Top_node [7]
+rrb
+pb
+rra
+The lenght in the stack b: 6
+pa
+The lenght in the stack b: 5
+The loop in prep : [3]
+Stack  : [a] , Value in cheapest or Top_node [8]
+rra
+pa
+The lenght in the stack b: 4
+pa
+The lenght in the stack b: 3
+pa
+The lenght in the stack b: 2
+The loop in prep : [6]
+Stack  : [a] , Value in cheapest or Top_node [3]
+rra
+The loop in prep : [5]
+Stack  : [a] , Value in cheapest or Top_node [3]
+rra
+pa
+The lenght in the stack b: 1
+pa
+
 
