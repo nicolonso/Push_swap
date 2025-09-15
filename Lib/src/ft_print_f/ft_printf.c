@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 20:30:32 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/08/12 19:18:06 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/09/15 19:39:46 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ static int	ft_format(va_list args, char *format)
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
-	int	count;
+	int		count;
 
 	count = 0;
 	if (!format)

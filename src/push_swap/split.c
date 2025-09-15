@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   split.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 21:29:10 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/09/07 19:30:33 by nicolas          ###   ########.fr       */
+/*   Updated: 2025/09/15 20:07:31 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../hdr/push_swap.h"
 
-static int count_words(char *s, char c)
+static int	count_words(char *s, char c)
 {
 	int		count;
 	bool	inside_word;
 
 	count = 0;
-	while(*s)
+	while (*s)
 	{
 		inside_word = false;
 		while (*s == c)
@@ -33,9 +33,10 @@ static int count_words(char *s, char c)
 			++s;
 		}
 	}
-	return (count);	
+	return (count);
 }
-static char *get_next_word(char *s, char c)
+
+static char	*get_next_word(char *s, char c)
 {
 	static int	cursor = 0;
 	char		*next_word;
@@ -57,7 +58,7 @@ static char *get_next_word(char *s, char c)
 	return (next_word);
 }
 
-char **split(char *s, char c)
+char	**split(char *s, char c)
 {
 	int		words_count;
 	char	**result_array;
@@ -78,21 +79,22 @@ char **split(char *s, char c)
 			if (!result_array)
 				return (NULL);
 			result_array[i++][0] = '\0';
-			continue;
+			continue ;
 		}
-		result_array[i++] = get_next_word(s, c);	
+		result_array[i++] = get_next_word(s, c);
 	}
 	result_array[i] = NULL;
 	return (result_array);
 }
-void free_split(char **split)
+
+void	free_split(char **split)
 {
-    int i;
-	
+	int	i;
+
 	i = -1;
-    if (!split)
-        return;
-    while (split[++i])
-        free(split[i]);
-    free(split);
+	if (!split)
+		return ;
+	while (split[++i])
+		free(split[i]);
+	free(split);
 }

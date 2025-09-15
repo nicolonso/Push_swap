@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 19:07:44 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/09/15 18:36:13 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/09/15 20:36:08 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sort_three(t_stack_node **a)
 {
-	t_stack_node *biggest_node;
+	t_stack_node	*biggest_node;
 
 	biggest_node = find_max(*a);
 	if (biggest_node == *a)
@@ -27,50 +27,31 @@ void	sort_three(t_stack_node **a)
 
 t_stack_node	*get_cheapest(t_stack_node *stack)
 {
-	if(!stack)
+	if (!stack)
 		return (NULL);
 	while (stack)
 	{
 		if (stack->cheapest)
-			return(stack);
+			return (stack);
 		stack = stack->next;
 	}
 	return (NULL);
 }
 
-/* static int node_in_stack(t_stack_node	*stack, t_stack_node	*node)
+void	prep_for_push(t_stack_node	**stack, t_stack_node *top_node,
+	char stack_name)
 {
-	while (stack)
-	{
-		if (stack == node)
-			return (1);
-		stack = stack->next;
-	}
-	return (0);
-	
-} */ 
+	int	len;
 
-void	prep_for_push(t_stack_node	**stack, t_stack_node *top_node, char stack_name)
-{
-	int len = stack_len(*stack);
+	len = stack_len(*stack);
 	while ((*stack)->nbr != top_node->nbr && len--)
 	{
-		/* if (!node_in_stack(*stack, top_node))
-        {
-            ft_printf("ERROR: top_node [%d] not in stack %c anymore\n", 
-                      top_node->nbr, stack_name);
-            return;
-        } */
-		
 		if (stack_name == 'a')
 		{
 			if (top_node->above_median)
-			{
 				ra(stack, false);
-				//ft_printf("Value in stack = %d ,top node :%i\n", top_node->nbr, (*stack)->nbr);
-			}	
 			else
-				rra(stack, false);	
+				rra(stack, false);
 		}
 		else if (stack_name == 'b')
 		{
@@ -79,5 +60,19 @@ void	prep_for_push(t_stack_node	**stack, t_stack_node *top_node, char stack_name
 			else
 				rrb(stack, false);
 		}
+	}
+}
+
+void	min_on_top(t_stack_node **a)
+{
+	int	min;
+
+	min = find_min(*a)->nbr;
+	while ((*a)->nbr != min)
+	{
+		if (find_min(*a)->above_median)
+			ra(a, false);
+		else
+			rra(a, false);
 	}
 }

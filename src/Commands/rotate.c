@@ -6,17 +6,17 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 17:12:38 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/09/15 18:23:33 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/09/15 20:15:16 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../hdr/push_swap.h"
 
-static void rotate(t_stack_node **stack)
+static void	rotate(t_stack_node **stack)
 {
 	t_stack_node	*first;
 	t_stack_node	*last;
-		
+
 	if (!*stack || !(*stack)->next)
 		return ;
 	first = *stack;

@@ -6,13 +6,13 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 22:28:26 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/09/15 19:28:17 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/09/15 22:00:21 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../hdr/push_swap.h"
 
-static long ft_atoi_long(const char *s)
+static long	ft_atoi_long(const char *s)
 {
 	long	result;
 	long	sign;
@@ -32,25 +32,25 @@ static long ft_atoi_long(const char *s)
 	return (result * sign);
 }
 
-static void append_node(t_stack_node **stack, int n)
+static void	append_node(t_stack_node **stack, int n)
 {
 	t_stack_node	*node;
 	t_stack_node	*last_node;
-	
-	if(!stack)
+
+	if (!stack)
 		return ;
 	node = malloc(sizeof(t_stack_node));
 	if (!node)
-		return ;	
+		return ;
 	node->nbr = n;
 	node->next = NULL;
 	node->cheapest = 0;
 	node->above_median = 0;
-	if(!(*stack))
-	{	
+	if (!(*stack))
+	{
 		*stack = node;
 		node->prev = NULL;
-	}	
+	}
 	else
 	{
 		last_node = find_last(*stack);
@@ -59,11 +59,11 @@ static void append_node(t_stack_node **stack, int n)
 	}
 }
 
-void init_stack_a(t_stack_node **a, char **av)
+void	init_stack_a(t_stack_node **a, char **av)
 {
 	long	n;
 	long	i;
-	
+
 	i = -1;
 	while (av[++i])
 	{
@@ -72,16 +72,8 @@ void init_stack_a(t_stack_node **a, char **av)
 		n = ft_atoi_long(av[i]);
 		if (n < INT_MIN || n > INT_MAX)
 			free_errors(a);
-		if(error_duplicate(*a, (int)n))
+		if (error_duplicate(*a, (int)n))
 			free_errors(a);
 		append_node(a, (int)n);
 	}
-}
-
-void free_helper(t_stack_node *a, t_stack_node *b, char **split, int	v)
-{
-	free_stack(&a);
-	free_stack(&b);
-	if (v == 1)
-		free_split(split); 
 }

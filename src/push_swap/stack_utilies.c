@@ -6,22 +6,22 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 19:47:29 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/09/02 20:08:27 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/09/15 19:56:00 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../hdr/push_swap.h"
 
-t_stack_node *find_last(t_stack_node *stack)
+t_stack_node	*find_last(t_stack_node *stack)
 {
-	if(!stack)
+	if (!stack)
 		return (NULL);
 	while (stack->next)
 		stack = stack->next;
 	return (stack);
 }
 
-int stack_len(t_stack_node	*stack)
+int	stack_len(t_stack_node	*stack)
 {
 	int	count;
 
@@ -34,7 +34,7 @@ int stack_len(t_stack_node	*stack)
 	return (count);
 }
 
-bool sorted_stack(t_stack_node *stack)
+bool	sorted_stack(t_stack_node *stack)
 {
 	if (!stack)
 		return (1);
@@ -47,7 +47,7 @@ bool sorted_stack(t_stack_node *stack)
 	return (true);
 }
 
-t_stack_node *find_max(t_stack_node *stack)
+t_stack_node	*find_max(t_stack_node *stack)
 {
 	t_stack_node	*max_node;
 
@@ -62,18 +62,19 @@ t_stack_node *find_max(t_stack_node *stack)
 	}
 	return (max_node);
 }
-t_stack_node *find_min(t_stack_node *stack)
+
+t_stack_node	*find_min(t_stack_node *stack)
 {
 	t_stack_node	*min_node;
-	
-	if(!stack)
+
+	if (!stack)
 		return (NULL);
 	min_node = stack;
 	while (stack)
 	{
 		if (stack->nbr < min_node->nbr)
 			min_node = stack;
-		stack = stack->next;	
+		stack = stack->next;
 	}
 	return (min_node);
 }

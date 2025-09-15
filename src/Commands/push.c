@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 17:10:25 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/09/06 19:20:43 by nicolas          ###   ########.fr       */
+/*   Updated: 2025/09/15 20:14:25 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../hdr/push_swap.h"
 
-static void push(t_stack_node **dest, t_stack_node **src)
+static void	push(t_stack_node **dest, t_stack_node **src)
 {
 	t_stack_node	*push_node;
-	
+
 	if (!*src)
 		return ;
 	push_node = *src;

@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init_a_to_b.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 18:54:36 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/09/07 19:29:13 by nicolas          ###   ########.fr       */
+/*   Updated: 2025/09/15 20:36:20 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../hdr/push_swap.h"
 
-void current_index(t_stack_node *stack)
+void	current_index(t_stack_node *stack)
 {
-	int i;
-	int median;
+	int	i;
+	int	median;
 
 	if (!stack)
 		return ;

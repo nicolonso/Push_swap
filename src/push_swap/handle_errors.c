@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   handle_errors.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 18:56:57 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/09/07 19:34:52 by nicolas          ###   ########.fr       */
+/*   Updated: 2025/09/15 19:58:40 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../hdr/push_swap.h"
 
-void free_stack(t_stack_node	**stack)
+void	free_stack(t_stack_node	**stack)
 {
 	t_stack_node	*ephemeral;
 	t_stack_node	*current;
@@ -25,7 +25,7 @@ void free_stack(t_stack_node	**stack)
 		free(current);
 		current = ephemeral;
 	}
-	*stack = NULL; 
+	*stack = NULL;
 }
 
 int	error_syntax(char *str)
@@ -42,7 +42,7 @@ int	error_syntax(char *str)
 	return (0);
 }
 
-int error_duplicate(t_stack_node	*a, int	n)
+int	error_duplicate(t_stack_node *a, int n)
 {
 	while (a)
 	{
@@ -56,7 +56,6 @@ int error_duplicate(t_stack_node	*a, int	n)
 void	free_errors(t_stack_node	**a)
 {
 	free_stack(*&a);
-	write(2 ,"Error\n", 6);
+	write (2, "Error\n", 6);
 	exit(1);
 }
-

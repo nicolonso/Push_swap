@@ -6,13 +6,13 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 18:54:28 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/09/15 18:09:25 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/09/15 20:37:35 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../hdr/push_swap.h"
 
-static void set_target_b(t_stack_node	*a, t_stack_node *b)
+static void	set_target_b(t_stack_node	*a, t_stack_node *b)
 {
 	t_stack_node	*current_a;
 	t_stack_node	*target_node;
@@ -34,12 +34,12 @@ static void set_target_b(t_stack_node	*a, t_stack_node *b)
 		if (best_match_index == LONG_MAX)
 			b->target_node = find_min(a);
 		else
-				b->target_node = target_node;
+			b->target_node = target_node;
 		b = b->next;
 	}
 }
 
-void			init_nodes_b(t_stack_node *a, t_stack_node *b)
+void	init_nodes_b(t_stack_node *a, t_stack_node *b)
 {
 	set_target_b(a, b);
 	current_index(a);
