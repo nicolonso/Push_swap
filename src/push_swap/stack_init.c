@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 22:28:26 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/09/07 18:41:22 by nicolas          ###   ########.fr       */
+/*   Updated: 2025/09/15 19:28:17 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,12 @@ void init_stack_a(t_stack_node **a, char **av)
 			free_errors(a);
 		append_node(a, (int)n);
 	}
+}
+
+void free_helper(t_stack_node *a, t_stack_node *b, char **split, int	v)
+{
+	free_stack(&a);
+	free_stack(&b);
+	if (v == 1)
+		free_split(split); 
 }

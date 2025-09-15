@@ -29,6 +29,7 @@ void			free_errors(t_stack_node	**a);
 int 			error_duplicate(t_stack_node *a, int n);
 int				error_syntax(char *str);
 void            free_split(char **split);
+void 			free_helper(t_stack_node *a, t_stack_node *b, char **split, int	v);
 
 //Stack initiation
 
