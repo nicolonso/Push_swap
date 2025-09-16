@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 19:07:44 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/09/15 20:36:08 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/09/16 21:04:37 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,20 @@ void	min_on_top(t_stack_node **a)
 		else
 			rra(a, false);
 	}
+}
+
+void	sort_and_free(t_stack_node **a, t_stack_node **b)
+{
+	if (stack_len(*a) == 1)
+	{
+		free_stack(a);
+		free_stack(b);
+		exit(0);
+	}
+	if (stack_len(*a) == 2 && !sorted_stack(*a))
+		sa(a, false);
+	else if (stack_len(*a) == 3)
+		sort_three(a);
+	else if (stack_len(*a) > 3)
+		sort_stacks(a, b);
 }

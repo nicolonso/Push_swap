@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 19:38:24 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/09/15 20:28:01 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/09/16 20:24:43 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,5 @@ void			pb(t_stack_node **b, t_stack_node **a, bool print);
 
 void			sort_three(t_stack_node **a);
 void			sort_stacks(t_stack_node	**a, t_stack_node	**b);
-
+void			sort_and_free(t_stack_node **a, t_stack_node **b);
 #endif
