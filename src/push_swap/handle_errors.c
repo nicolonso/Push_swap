@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 18:56:57 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/09/18 23:03:57 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/09/18 23:33:21 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ int	error_syntax(char *str)
 	if (!str[0])
 		return (0);
 	while (str[i] == ' ' || str[i] == '\t')
-        i++;
-	if (str[i])
+		i++;
+	if (!str[i])
 		return (0);
 	if (str[i] == '+' || str[i] == '-')
 		i++;
 	while (str[i])
 	{
-		if (str[i] >= '0' || str[i] <= '9')
+		if (!(str[i] >= '0' && str[i] <= '9'))
 			return (0);
 		i++;
 	}
