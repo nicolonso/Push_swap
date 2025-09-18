@@ -22,7 +22,6 @@ PUSH_SWAP_DIR		=	$(SRC_DIR)push_swap/push_swap.c \
 						$(SRC_DIR)push_swap/stack_utilies.c \
 						$(SRC_DIR)push_swap/stack_init.c \
 						$(SRC_DIR)push_swap/handle_errors.c \
-						$(SRC_DIR)push_swap/split.c \
 
 ALGORITHM_DIR		=	$(SRC_DIR)Algorithm/sort_stacks.c \
 						$(SRC_DIR)Algorithm/sort_three.c \
