@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 22:28:26 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/09/16 19:36:41 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/09/18 22:25:46 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,10 @@ void	init_stack_a(t_stack_node **a, char **av)
 	while (av[++i])
 	{
 		if (error_syntax(av[i]))
+		{
+			free_split(av);
 			free_errors(a);
+		}
 		n = ft_atoi_long(av[i]);
 		if (n < INT_MIN || n > INT_MAX)
 			free_errors(a);
@@ -77,3 +80,4 @@ void	init_stack_a(t_stack_node **a, char **av)
 		append_node(a, (int)n);
 	}
 }
+

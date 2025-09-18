@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 19:38:24 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/09/16 20:24:43 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/09/18 22:26:53 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,12 @@ void			free_errors(t_stack_node	**a);
 int				error_duplicate(t_stack_node *a, int n);
 int				error_syntax(char	*str);
 void			free_split(char	**split);
+int				space_check(char *arg);
 
 //Stack initiation
 
 void			init_stack_a(t_stack_node	**a, char	**av);
-char			**split(char	*s, char c);
+char			**split(const char	*s, char c);
 
 //Nodes intiation
 

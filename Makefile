@@ -9,7 +9,7 @@ OBJ_DIR				= obj/
 
 # Compiler and CFlags
 CC					= cc
-CFLAGS				= -Wall -Werror -Wextra -I$(HDR)
+CFLAGS				= -Wall -Werror -Wextra -I$(HDR) -Iinclude
 RM					= rm -f
 
 # Source Files

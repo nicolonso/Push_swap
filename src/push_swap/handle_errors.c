@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 18:56:57 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/09/15 23:18:53 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/09/18 22:26:09 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,20 @@ void	free_stack(t_stack_node	**stack)
 
 int	error_syntax(char *str)
 {
-	if (*str == '\0')
+	int	i;
+
+	if (!str[0])
 		return (1);
-	if (!(*str == '+' || *str == '-' || (*str >= '0' && *str <= '9')))
+	i = 0;
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	if (!str[i])
 		return (1);
-	if (((str[1] == '+' || str[1] == '-') && !(str[1] >= '0' && str[1] <= '9')))
-		return (1);
-	while (*++str)
+	while (str[i])
 	{
-		if (!(*str >= '0' && *str <= '9'))
+		if (!(str[i] >= '0' && str[i] <= '9'))
 			return (1);
+		i++;
 	}
 	return (0);
 }
@@ -60,4 +64,18 @@ void	free_errors(t_stack_node	**a)
 	free_stack(a);
 	write (2, "Error\n", 6);
 	exit(1);
+}
+
+int	space_check(char *arg)
+{
+	int	i;
+
+	i = -1;
+	while (arg[++i])
+	{
+		if (arg[i] != ' ' && arg[i] != '\t')
+			return (1);
+		i++;
+	}
+	return (0);
 }
