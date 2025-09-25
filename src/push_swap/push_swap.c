@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 18:13:41 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/09/18 23:25:57 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/09/25 21:17:37 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int ac, char **av)
 		while (++j < ac)
 		{
 			if ((!av[j][0]) || space_check(av[j]))
-				free_errors(&a);
+				free_errors(&a, av);
 			splitt = ft_split(av[j], ' ');
 			init_stack_a(&a, splitt);
 			free_split(splitt);

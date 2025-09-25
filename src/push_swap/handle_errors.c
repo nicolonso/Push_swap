@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 18:56:57 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/09/18 23:33:21 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/09/25 21:19:50 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,9 @@ int	error_duplicate(t_stack_node *a, int n)
 	return (0);
 }
 
-void	free_errors(t_stack_node	**a)
+void	free_errors(t_stack_node	**a, char **av)
 {
+	free_split (av);
 	free_stack(a);
 	write (2, "Error\n", 6);
 	exit(1);

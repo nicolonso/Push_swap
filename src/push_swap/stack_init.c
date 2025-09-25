@@ -6,7 +6,7 @@
 /*   By: nalfonso <nalfonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 22:28:26 by nalfonso          #+#    #+#             */
-/*   Updated: 2025/09/18 23:30:25 by nalfonso         ###   ########.fr       */
+/*   Updated: 2025/09/25 22:26:34 by nalfonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,17 +68,14 @@ void	init_stack_a(t_stack_node **a, char **av)
 	while (av[++i])
 	{
 		if (!av[i][0] || space_check(av[i]))
-			free_errors(a);
+			free_errors(a, av);
 		if (error_syntax(av[i]) == 0)
-		{
-			free_split(av);
-			free_errors(a);
-		}
+			free_errors(a, av);
 		n = ft_atoi_long(av[i]);
 		if (n < INT_MIN || n > INT_MAX)
-			free_errors(a);
+			free_errors(a, av);
 		if (error_duplicate(*a, (int)n))
-			free_errors(a);
+			free_errors(a, av);
 		append_node(a, (int)n);
 	}
 }
